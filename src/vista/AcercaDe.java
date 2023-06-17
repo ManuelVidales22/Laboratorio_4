@@ -6,14 +6,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
+public class AcercaDe extends JFrame implements ActionListener{
 
-public class AcercaDe extends JFrame {
-
-     public JButton jbcerrar;
-        JLabel jlImg;
+    public JButton jbcerrar;
+    public JLabel jlImg;
     
     public AcercaDe(){
         
@@ -61,16 +63,24 @@ public class AcercaDe extends JFrame {
         
         jbcerrar = new JButton("Cerrar");
         jbcerrar.setBounds(100, 200, 200, 30);
- 
         add(jbcerrar);
+        jbcerrar.addActionListener(this);
         
     }
  
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         AcercaDe Ac = new AcercaDe();
         
     
-}
+}*/
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == jbcerrar) {
+            JOptionPane.showMessageDialog(null, "Gracias por utilizar mi aplicación");
+            setVisible(false);
+        }
+    }
 }
     
 

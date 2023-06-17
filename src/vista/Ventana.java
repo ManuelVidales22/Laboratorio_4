@@ -1,26 +1,24 @@
 package vista;
 
 import java.awt.Color;
-import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import controlador.Controlador;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-public class Ventana extends JFrame implements Vista, ActionListener, MouseListener{
-        Controlador controlador;
-        JButton jbIngresoDatos, jbConsulta;
+public class Ventana extends JFrame implements MouseListener{
+    
+        public JButton jbIngresoDatos;
+        public JButton jbConsulta;
         public JButton jbAcercaDe;
-        JButton jbVentas;
+        public JButton jbVentas;
         JLabel jlImg, jlImg1,jlImg2, jlTitu, jlBienbenidos;
+        
         public Ventana(){
         
         setTitle("Inventario Dulceria");
@@ -86,25 +84,25 @@ public class Ventana extends JFrame implements Vista, ActionListener, MouseListe
         jbIngresoDatos.setBounds(30, 240, 150, 30);
         jbIngresoDatos.setToolTipText("Entrar");
         add(jbIngresoDatos);
-        jbIngresoDatos.addActionListener(this);
+        
         
         jbConsulta = new JButton("Consultar Datos");
         jbConsulta.setBounds(30, 290, 150, 30);
         jbConsulta.setToolTipText("Entrar");
         add(jbConsulta);
-        jbConsulta.addActionListener(this);
+        
         
         jbVentas = new JButton("Ventas");
         jbVentas.setBounds(30, 340, 150, 30);
         jbVentas.setToolTipText("Entrar");
         add(jbVentas);
-        jbVentas.addActionListener(this);
+        
         
         jbAcercaDe = new JButton("Acerca De..");
         jbAcercaDe.setBounds(30, 390, 150, 30);
         jbAcercaDe.setToolTipText("Entrar");
         add(jbAcercaDe);
-        jbAcercaDe.addActionListener(this);
+        
         
         
         }
@@ -114,74 +112,12 @@ public class Ventana extends JFrame implements Vista, ActionListener, MouseListe
         
     }*/
 
-    @Override
-    public void iniciar(Controlador controlador) {
-        this.controlador = controlador;
-        
-        setVisible(true);
-    }
 
-    @Override
-    public void insertarDulce() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insertarDulce'");
-    }
-
-    @Override
-    public String getNombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNombre'");
-    }
-
-    @Override
-    public String getTipo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTipo'");
-    }
-
-    @Override
-    public int getCantidad() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCantidad'");
-    }
-
-    @Override
-    public double getPrecio() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPrecio'");
-    }
-
-    @Override
-    public void actualizarNombresListComboboxes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizarNombresListComboboxes'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbAcercaDe) {
-            AcercaDe ac = new AcercaDe();
-            setVisible(false);
-        }
-
-        if (e.getSource() == jbIngresoDatos) {
-            IngresarDatos ingreso = new IngresarDatos();
-            setVisible(false);
-        }
-
-        if (e.getSource() == jbConsulta) {
-            ConsultarDatos consulta = new ConsultarDatos();
-            setVisible(false);
-        }
-
-        if (e.getSource() == jbVentas) {
-            Ventas vt = new Ventas();
-            setVisible(false);
-        }
+    
 
       
 
-    }
+    
 
     @Override
     public void mouseClicked(MouseEvent e) {

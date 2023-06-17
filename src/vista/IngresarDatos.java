@@ -11,11 +11,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class IngresarDatos extends JFrame implements ActionListener{
+
+
+public class IngresarDatos extends JFrame {
     JLabel  jlTitu,jlTitu1, jlNumIde, jlApe, jlNom, jlEdad , jlNumCelu, jlCiuRe, jlNomDulce, jlTipoDul, jlCantidad,jlprecio;
     public JTextField jtNumIde, jtNombre, jtApellido, jtEdad;
     public JTextField jtNomDulce;
@@ -23,9 +22,9 @@ public class IngresarDatos extends JFrame implements ActionListener{
     public JTextField jtCiuRe;
     public JTextField jtNumCelu;
     public JComboBox<String> jcGenero ;
-    JRadioButton jr1, jr2, jr3;
-    JSpinner jsCantidad;
-    JButton jbGuardar, jbVolver, jbLimpiar1, jbLimpiar;
+    public JRadioButton jr1, jr2, jr3;
+    public JSpinner jsCantidad;
+    public JButton jbGuardar, jbVolver, jbLimpiar1, jbLimpiar;
     
     public IngresarDatos(){
         
@@ -204,22 +203,22 @@ public class IngresarDatos extends JFrame implements ActionListener{
        jbGuardar = new JButton("Guardar");
        jbGuardar.setBounds(350, 400, 100, 30);
        add(jbGuardar);
-       jbGuardar.addActionListener(this);
+       
        
        jbVolver =  new JButton("Volver");
        jbVolver.setBounds(230, 400, 100, 30);
        add(jbVolver); 
-       jbVolver.addActionListener(this);
+       
        
        jbLimpiar =  new JButton("Limpiar");
        jbLimpiar.setBounds(120, 350, 100, 30);
        add(jbLimpiar);
-       jbLimpiar.addActionListener(this);
+       
        
        jbLimpiar1 =  new JButton("Limpiar");
        jbLimpiar1.setBounds(460, 350, 100, 30);
        add(jbLimpiar1);
-       jbLimpiar1.addActionListener(this);
+       
        
        
         
@@ -229,24 +228,5 @@ public class IngresarDatos extends JFrame implements ActionListener{
         IngresarDatos in =  new IngresarDatos();
     }*/
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbLimpiar) {
-            System.out.println("boton limpiar");
-        }
-
-        if (e.getSource() == jbLimpiar1) {
-            System.out.println("boton limpiar1");
-        }
-
-        if (e.getSource() == jbGuardar) {
-            System.out.println("boton guardar");
-        }
-
-        if (e.getSource() == jbVolver) {
-            Ventana vista = new Ventana();
-            setVisible(false);
-        }
-    }
     
 }

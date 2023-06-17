@@ -13,17 +13,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.SpinnerNumberModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Ventas extends JFrame implements ActionListener{
+
+public class Ventas extends JFrame {
     
     
-    JButton jbLimpiar, jbGuardar, jbVolver;
-    JLabel jlImg, jlImg1, jlTitu, jlVentas, jlNomprod,jlCantidad;
-    JComboBox<String> jcNomProd ;
-    JSpinner jsCantidad;
-    JTextArea jtCampo;
+    public JButton jbLimpiar, jbGuardar, jbVolver;
+    public JLabel jlImg, jlImg1, jlTitu, jlVentas, jlNomprod,jlCantidad;
+    public JComboBox<String> jcNomProd ;
+    public JSpinner jsCantidad;
+    public JTextArea jtCampo;
         
     public Ventas(){
         
@@ -121,42 +120,26 @@ public class Ventas extends JFrame implements ActionListener{
         jbLimpiar.setBounds(30, 240, 150, 30);
         jbLimpiar.setToolTipText("Entrar");
         add(jbLimpiar);
-        jbLimpiar.addActionListener(this);
+       
             
         
         jbGuardar = new JButton("Guardar");
         jbGuardar.setBounds(30, 290, 150, 30);
         jbGuardar.setToolTipText("Entrar");
         add(jbGuardar);
-        jbGuardar.addActionListener(this);
+        
         
         jbVolver = new JButton("Volver");
         jbVolver.setBounds(30, 340, 150, 30);
         jbVolver.setToolTipText("Entrar");
         add(jbVolver);
-        jbVolver.addActionListener(this);
         
-        
+        }
+
+    
+
        
-        
-        
-        }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbLimpiar) {
-            System.out.println("boton limpiar");
-        }
-
-        if (e.getSource() == jbGuardar) {
-            System.out.println("boton guardar");
-        }
-
-        if (e.getSource() == jbVolver) {
-            Ventana vista = new Ventana();
-            setVisible(false);
-        }
-    }
+    
     
     
     /*public static void main(String[] args) {

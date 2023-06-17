@@ -17,12 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EtchedBorder;
 
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
-public class ConsultarDatos extends JFrame implements ActionListener{
+public class ConsultarDatos extends JFrame {
     
     public JLabel jlTitu1, jlTitu2, jlCantidad, jlEdad;
     public JTextField jtEdad;
@@ -138,18 +133,18 @@ public class ConsultarDatos extends JFrame implements ActionListener{
        jbConsultar = new JButton("Consultar");
        jbConsultar.setBounds(370, 420, 100, 30);
        add(jbConsultar);
-       jbConsultar.addActionListener(this);
+       
        
        
        jbLimpiar =  new JButton("Limpiar");
        jbLimpiar.setBounds(250, 420, 100, 30);
        add(jbLimpiar); 
-       jbLimpiar.addActionListener(this);
+       
        
        jbVolver =  new JButton("Volver");
        jbVolver.setBounds(120, 420, 100, 30);
        add(jbVolver);
-       jbVolver.addActionListener(this);
+      
 
         
         
@@ -157,21 +152,5 @@ public class ConsultarDatos extends JFrame implements ActionListener{
     /*public static void main(String[] args) {
        ConsultarDatos dt = new ConsultarDatos();
     }*/
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == jbLimpiar) {
-            System.out.println("Boton limpiar");
-        }
-
-        if (e.getSource() == jbConsultar) {
-            System.out.println("Boton consultar");
-        }
-
-        if (e.getSource() == jbVolver) {
-            Ventana vista = new Ventana();
-            setVisible(false);
-            
-        }
-    }
     
 }

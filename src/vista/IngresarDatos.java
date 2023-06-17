@@ -110,7 +110,6 @@ public class IngresarDatos extends JFrame{
         jcGenero.addItem("Genero");
         jcGenero.addItem("M"); 
         jcGenero.addItem("F");
-        jcGenero.addItem("Otro");
         jcGenero.setBounds(30, 260, 200, 30);  
         setResizable(false);
         

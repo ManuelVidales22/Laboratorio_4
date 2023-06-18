@@ -16,11 +16,8 @@ import javax.swing.SpinnerNumberModel;
 
 public class IngresarDatos extends JFrame {
     JLabel  jlTitu,jlTitu1, jlNumIde, jlApe, jlNom, jlEdad , jlNumCelu, jlCiuRe, jlNomDulce, jlTipoDul, jlCantidad,jlprecio;
-    public JTextField jtNumIde, jtNombre, jtApellido, jtEdad;
-    public JTextField jtNomDulce;
-    public JTextField jtTipoDul, jtCantidad, jtPrecio;
-    public JTextField jtCiuRe;
-    public JTextField jtNumCelu;
+    public JTextField jtNumIde, jtNombre, jtApellido, jtEdad, jtCiuRe, jtNumCelu;;
+    public JTextField jtNomDulce, jtTipoDul, jtPrecio;
     public JComboBox<String> jcGenero ;
     public JRadioButton jr1, jr2, jr3;
     public JSpinner jsCantidad;
@@ -155,17 +152,17 @@ public class IngresarDatos extends JFrame {
         jlTipoDul.setFont(new Font("Tomaha", Font.BOLD|Font.BOLD,13));
         add(jlTipoDul);
         
-        jr1 = new JRadioButton(" Dulce ");
+        jr1 = new JRadioButton("Dulce");
         jr1.setBounds(360, 130, 80, 30);
         jr1.setOpaque(false);
         add(jr1);
         
-        jr2 = new JRadioButton(" Acido ");
+        jr2 = new JRadioButton("Acido");
         jr2.setBounds(460, 130, 80, 30);
         jr2.setOpaque(false);
         add(jr2);
         
-        jr3 = new JRadioButton(" Sin azucar ");
+        jr3 = new JRadioButton("Sin azucar");
         jr3.setBounds( 560, 130, 100, 30);
         jr3.setOpaque(false);
         add(jr3);

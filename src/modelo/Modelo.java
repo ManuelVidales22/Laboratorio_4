@@ -6,6 +6,8 @@ public class Modelo  {
     
     // Array de los dulces
     private ArrayList<Dulce> dulces = new ArrayList<Dulce>();
+    // Array de los provedores
+    private ArrayList<Proveedor> proveedores = new ArrayList<Proveedor>();
    
     
     // Constructor de dulces por defecto
@@ -23,6 +25,15 @@ public class Modelo  {
         Dulce dulce3 = new Dulce("Tosh", "Sin azucar", 15, 3000);
         dulces.add(dulce3);
 
+        // Proveedor 1
+        Proveedor proveedor1 = new Proveedor("Carlos","123",30,"carlos@example.com","313750482",'M',"Cali");
+        proveedores.add(proveedor1);
+
+        //proveedor 2
+        Proveedor proveedor2 = new Proveedor("Ana", "456", 28, "ana@example.com", "987654321", 'F', "Buga");
+        proveedores.add(proveedor2);
+
+
     }
    
     // Metodo que permite agregar dulces
@@ -31,10 +42,24 @@ public class Modelo  {
     dulces.add(dulce);
     }
 
+    // Metodo que permite agregar proveedores
+     public void insertarProveedor(String nombre, String identificacion, int edad, String correo, String numero, char sexo, String ciudad) {
+        Proveedor proveedor = new Proveedor(nombre, identificacion, edad, correo, numero, sexo, ciudad);
+        proveedores.add(proveedor);
+    }
+
     public void listarDulces() {
         System.out.println("Lista de dulces:");
         for (Dulce dulce : dulces) {
             System.out.println(dulce.getNombre() + " - " + dulce.getTipo() + " - " + dulce.getCantidad());
+        }
+    }
+
+    public void listarProveedores() {
+        System.out.println("Lista de proveedores:");
+
+        for (Proveedor proveedor : proveedores) {
+            System.out.println(proveedor.getNombre());
         }
     }
     
@@ -50,7 +75,6 @@ public class Modelo  {
                 // Manejo de error o excepción si la cantidad vendida es inválida
                 System.out.println("Error: Cantidad vendida inválida para el dulce ");
             }
-                
                 break;
         }
     }

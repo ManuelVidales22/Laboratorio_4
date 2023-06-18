@@ -37,7 +37,7 @@ public class Ventas extends JFrame {
         //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         crearGUI();
         
-        setVisible(true);
+        //setVisible(true);
     }
     
     public void crearGUI() {
@@ -82,6 +82,7 @@ public class Ventas extends JFrame {
         jlNomprod.setBounds( 220 , 120, 180, 30);
         jlNomprod.setForeground(Color.WHITE);
         jlNomprod.setFont(new Font("Tomaha", Font.BOLD|Font.BOLD,13));
+        
         add(jlNomprod);
         
         jcNomProd = new JComboBox<>();

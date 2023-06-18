@@ -8,14 +8,19 @@ import javax.swing.JOptionPane;
 
 import vista.IngresarDatos;
 import vista.Ventana;
+import vista.Ventas;
 import modelo.Modelo;
 public class ControladorIngresar implements ActionListener {
     public IngresarDatos ingresar;
+    public Modelo modelo;
+    public Ventas ventas;
 
-    Modelo m = new Modelo();
-
-    public ControladorIngresar(IngresarDatos ingresar) {
+    public ControladorIngresar(IngresarDatos ingresar, Modelo modelo, Ventas ventas) {
         this.ingresar = ingresar;
+        this.modelo = modelo;
+        this.ventas = ventas;
+
+        //Listener de botones del panel de ingresar datos
         this.ingresar.jbGuardar.addActionListener(this);
         this.ingresar.jbVolver.addActionListener(this);
         this.ingresar.jbLimpiar.addActionListener(this);
@@ -27,10 +32,11 @@ public class ControladorIngresar implements ActionListener {
         if (e.getSource() == ingresar.jbGuardar) {
             System.out.println("Se presionó el botón Guardar");
             insertar(); 
+            
         } else if (e.getSource() == ingresar.jbVolver) {
             System.out.println("Se presionó el botón Volver");
             Ventana ventana = new Ventana();
-            ControladorVentana menu = new ControladorVentana(ventana);
+            ControladorVentana menu = new ControladorVentana(ventana,modelo,ventas);
             ingresar.setVisible(false);
             // Lógica para volver a la ventana anterior
         } else if (e.getSource() == ingresar.jbLimpiar) {
@@ -78,11 +84,10 @@ public class ControladorIngresar implements ActionListener {
         int edad = Integer.parseInt(edadStr);
         double precio = Double.parseDouble(precioStr);
 
-        m.insertarDulces(nomDulce, tipo, cant, precio);
-        m.insertarProveedor(nombre, apellido, edad, numCelu, numId, genero, ciuRe);
+        modelo.insertarDulces(nomDulce, tipo, cant, precio);
+        modelo.insertarProveedor(numId,nombre,apellido,edad,numCelu,genero,ciuRe);
         //pruebas
-        m.listarProveedores();
-        m.listarDulces();
+        modelo.listarensegundoplano();
 
         JOptionPane.showMessageDialog(null, "Se agregaron datos con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
     } catch (NumberFormatException e) {
@@ -96,8 +101,7 @@ public class ControladorIngresar implements ActionListener {
         ingresar.jtEdad.setText("");
         ingresar.jtCiuRe.setText("");
         ingresar.jtNumCelu.setText("");
-        ingresar.jcGenero.removeAllItems();
-        ingresar.jcGenero.addItem("Genero");
+        ingresar.jcGenero.setSelectedIndex(0);
     }
     public void limpiar1() {
     ingresar.jtNomDulce.setText("");

@@ -15,19 +15,24 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
-
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumn;
 public class ConsultarDatos extends JFrame {
     
+    public ModeloTabla mt;
+    public JTable tabla;
     public JLabel jlTitu1, jlTitu2, jlCantidad, jlEdad;
     public JTextField jtEdad;
-    public JTable tabla;
     public JButton regresar;
     public char tipo;
     public JComboBox<String> jcTipo, jcGenero ;
     public JSpinner jsCantidad;
     public JTextArea jtCampo;
     public JButton  jbConsultar, jbVolver, jbLimpiar;
+    public String encabezados[] = {"Nombre", "Tipo", "Cantidad", "Precio"};
+    public String datos[][] = {{"", "", "", ""}};
     
     
     public ConsultarDatos(){
@@ -60,19 +65,21 @@ public class ConsultarDatos extends JFrame {
         jl.setFont(new Font("Tahoma", Font.BOLD, 25));
         add(jl);
         
-        jlTitu1 =  new JLabel("Consulta de datos #1");
+        /*jlTitu1 =  new JLabel("Consulta de datos #1");
         jlTitu1.setBounds(140, 40, 300, 60); 
         //jlTitulo.setOpaque(true);// esto sirve para poner el fondo blanco del texto 
         jlTitu1.setForeground(Color.BLACK);
         jlTitu1.setFont(new Font("Arial", Font.BOLD|Font.BOLD,20)); 
         jlTitu1.setHorizontalAlignment(JLabel.CENTER);  
-        add(jlTitu1);
+        add(jlTitu1);*/
         
         jcTipo = new JComboBox<>();
         jcTipo.addItem("Tipo Dulce");
-        jcTipo.addItem(""); 
-        jcTipo.addItem("");
-        jcTipo.setBounds(80, 90, 200, 30);  
+        jcTipo.addItem("Dulce"); 
+        jcTipo.addItem("Acido");
+        jcTipo.addItem("Sin azucar");
+       
+        jcTipo.setBounds(80, 90, 200, 30); 
         setResizable(false);
         
         add(jcTipo);
@@ -89,24 +96,24 @@ public class ConsultarDatos extends JFrame {
         add(jsCantidad);
         
         
-        jlTitu2 =  new JLabel("Consulta de datos #2");
+        /*jlTitu2 =  new JLabel("Consulta de datos #2");
         jlTitu2.setBounds(140, 110, 300, 60); 
         //jlTitulo.setOpaque(true);// esto sirve para poner el fondo blanco del texto 
         jlTitu2.setForeground(Color.BLACK);
         jlTitu2.setFont(new Font("Arial", Font.BOLD|Font.BOLD,20)); 
         jlTitu2.setHorizontalAlignment(JLabel.CENTER);  
-        add(jlTitu2);
+        add(jlTitu2);*/
         
         jlEdad =  new JLabel("Edad: ");
         jlEdad.setBounds( 170 , 160, 180, 30);
         jlEdad.setForeground(Color.WHITE);
         jlEdad.setFont(new Font("Tomaha", Font.BOLD|Font.BOLD,13));
-        add(jlEdad);
+        //add(jlEdad);
         
         jtEdad = new JTextField();
         jtEdad.setBounds(210, 160, 60, 30);
         jtEdad.setBorder(null);
-        add(jtEdad);
+        //add(jtEdad);
         
         
         jcGenero = new JComboBox<>();
@@ -116,17 +123,41 @@ public class ConsultarDatos extends JFrame {
         jcGenero.setBounds(310, 160, 120, 30);  
         setResizable(false);
         
-        add(jcGenero);
+        //add(jcGenero);
         
         
-       jtCampo = new JTextArea();
+       /*jtCampo = new JTextArea();
        jtCampo.setBorder(null);
        jtCampo.setLineWrap(true);
        jtCampo.setWrapStyleWord(true);
        jtCampo.setEditable(false);               //Bloquea El TEXTAREA
        JScrollPane js = new JScrollPane(jtCampo);        
        js.setBounds(70, 200, 450, 200);
-       add(js);
+       add(js);*/
+        
+        
+        mt = new ModeloTabla(datos, encabezados);
+        tabla = new JTable(mt);
+        
+        tabla.setSelectionBackground(Color.lightGray);
+        tabla.setSelectionForeground(Color.RED);
+        
+        
+        TableColumn tc = tabla.getColumn("Nombre");
+        tc.setPreferredWidth(50);
+        
+        DefaultTableCellRenderer tc1 = new DefaultTableCellRenderer();
+        tc1.setHorizontalAlignment(SwingConstants.CENTER);
+        tabla.getColumnModel().getColumn(0).setCellRenderer(tc1);
+        
+        DefaultTableCellRenderer tc2 = new DefaultTableCellRenderer();
+        tc2.setHorizontalAlignment(SwingConstants.RIGHT);
+        tabla.getColumnModel().getColumn(3).setCellRenderer(tc2);
+        
+        JScrollPane js = new JScrollPane(tabla);
+        js.setBounds(40, 150, 500, 150);
+    
+        add(js);
        
         /////////////////// BOTONES /////////////////////
         

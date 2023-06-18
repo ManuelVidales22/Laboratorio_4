@@ -82,26 +82,39 @@ public class Ventana extends JFrame implements MouseListener{
         
         jbIngresoDatos = new JButton("Ingresar Datos");
         jbIngresoDatos.setBounds(30, 240, 150, 30);
+        jbIngresoDatos.setBackground(new Color(255, 116, 148));
+        jbIngresoDatos.setBorderPainted(false); // Elimina el borde del botón
+        jbIngresoDatos.setFocusPainted(false); 
         jbIngresoDatos.setToolTipText("Entrar");
         add(jbIngresoDatos);
+        jbIngresoDatos.addMouseListener(this);
         
         
         jbConsulta = new JButton("Consultar Datos");
         jbConsulta.setBounds(30, 290, 150, 30);
+        jbConsulta.setBackground(new Color(255, 116, 148));
+        jbConsulta.setBorderPainted(false);
         jbConsulta.setToolTipText("Entrar");
         add(jbConsulta);
+        jbConsulta.addMouseListener(this);
         
         
         jbVentas = new JButton("Ventas");
         jbVentas.setBounds(30, 340, 150, 30);
+        jbVentas.setBackground(new Color(255, 116, 148));
+        jbVentas.setBorderPainted(false);
         jbVentas.setToolTipText("Entrar");
         add(jbVentas);
+        jbVentas.addMouseListener(this);
         
         
         jbAcercaDe = new JButton("Acerca De..");
         jbAcercaDe.setBounds(30, 390, 150, 30);
+        jbAcercaDe.setBackground(new Color(255, 116, 148));
+        jbAcercaDe.setBorderPainted(false);
         jbAcercaDe.setToolTipText("Entrar");
         add(jbAcercaDe);
+        jbAcercaDe.addMouseListener(this);
         
         
         
@@ -112,41 +125,29 @@ public class Ventana extends JFrame implements MouseListener{
         
     }*/
 
-
-    
-
-      
-
-    
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseClicked'");
-    }
-
     @Override
     public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
     }
 
-    @Override
+   @Override
     public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
-    }
+    // Implementación vacía
+}
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
-    }
+public void mouseEntered(MouseEvent e) {
+    JButton boton = (JButton) e.getSource();
+    boton.setBackground(new Color(196, 49, 83)); // Cambia el color de fondo al entrar el mouse
+}
 
-    @Override
-    public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
-    }
-    
+@Override
+public void mouseExited(MouseEvent e) {
+    JButton boton = (JButton) e.getSource();
+    boton.setBackground(new Color(255, 116, 148));// Restaura el color de fondo al salir el mouse
+}
+
+@Override
+public void mouseClicked(MouseEvent e) {
+}
+  
 }

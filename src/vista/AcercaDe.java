@@ -49,13 +49,13 @@ public class AcercaDe extends JFrame implements ActionListener{
         j2.setHorizontalAlignment(SwingConstants.CENTER);
         add(j2);
         
-        JLabel j3 = new JLabel("manuel.vidales@correouni..");
+        JLabel j3 = new JLabel("manuel.vidales@correounivalle.edu.co");
         j3.setBounds(90, 90, 200, 100);
         j3.setHorizontalAlignment(SwingConstants.CENTER);
         add(j3);
         
         
-        JLabel j7 = new JLabel("Versión App: ");
+        JLabel j7 = new JLabel("Versión App: 3.0.1");
         j7.setBounds(90, 130, 200, 100);
         j7.setHorizontalAlignment(SwingConstants.CENTER);
         add(j7);
@@ -65,6 +65,7 @@ public class AcercaDe extends JFrame implements ActionListener{
         jbcerrar.setBounds(100, 200, 200, 30);
         add(jbcerrar);
         jbcerrar.addActionListener(this);
+         
         
     }
  
@@ -79,6 +80,7 @@ public class AcercaDe extends JFrame implements ActionListener{
         if (e.getSource() == jbcerrar) {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar mi aplicación");
             setVisible(false);
+            System.exit(0);
         }
     }
 }

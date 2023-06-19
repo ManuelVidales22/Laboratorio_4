@@ -2,10 +2,8 @@ Facturar:
 ------------------------------------------------
 | Nombre          | Tipo            | Cantidad |
 ------------------------------------------------
-| Frunas          | Dulce           | 2        |
+| Frunas          | Dulce           | 0        |
 | Gomitas         | Acido           | 4        |
 | Tosh            | Sin azucar      | 6        |
 | Chocoso         | Dulce           | 2        |
-| bombom          | Dulce           | 12       |
-| bombom          | Dulce           | 20       |
 ------------------------------------------------

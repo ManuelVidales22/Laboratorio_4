@@ -2,6 +2,8 @@
 
 package vista;
 
+import java.awt.Color;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,21 +16,29 @@ import java.awt.event.ActionListener;
 
 public class AcercaDe extends JFrame implements ActionListener{
 
-    public JButton jbcerrar;
-    public JLabel jlImg;
+    public JButton jbcerrar; // Boton cerrar
+    public JLabel jlImg;     
     
+    
+    //Constructor de JFrame
     public AcercaDe(){
         
         
         setSize(400, 400);
         setLocationRelativeTo(null);
+        setResizable(false);
+        getContentPane().setBackground(new Color(255, 174, 204));
+        Image icn = new ImageIcon(
+                getClass().getResource("/imagenes/Dulceria.png")).getImage();
+        setIconImage(icn);
         setLayout(null);
         crearGUI();
         
         setVisible(true);
         
     }
-        
+     
+    // GUI PRINCIPAL 
     private void crearGUI() {
         
         setTitle("Acerca De...");
@@ -74,7 +84,8 @@ public class AcercaDe extends JFrame implements ActionListener{
         
     
 }*/
-
+    
+ // Evento del boton cerrar
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jbcerrar) {

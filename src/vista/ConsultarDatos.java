@@ -34,7 +34,7 @@ public class ConsultarDatos extends JFrame {
     public String encabezados[] = {"Nombre", "Tipo", "Cantidad", "Precio"};
     public String datos[][] = {{"", "", "", ""}};
     
-    
+    // Constructor de JFrame
     public ConsultarDatos(){
         
         setTitle("Listados");
@@ -54,6 +54,8 @@ public class ConsultarDatos extends JFrame {
 
         setVisible(true);
     }
+    
+    // GUI PRINCIPAL 
     private void crearGUI() {
         JLabel jl = new JLabel("  Listado de Consultas");
         jl.setBounds(0, 0, 600, 50);

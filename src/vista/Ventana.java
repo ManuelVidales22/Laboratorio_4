@@ -19,10 +19,12 @@ public class Ventana extends JFrame implements MouseListener{
         public JButton jbVentas;
         JLabel jlImg, jlImg1,jlImg2, jlTitu, jlBienbenidos;
         
+        //Constructor de JFrame
         public Ventana(){
         
         setTitle("Inventario Dulceria");
         setSize(600, 500);
+        setResizable(false);
         setLocationRelativeTo(null);
         setLayout(null);
         getContentPane().setBackground(new Color(255, 174, 204));
@@ -36,6 +38,7 @@ public class Ventana extends JFrame implements MouseListener{
         
         }
         
+        // GUI PRINCIPAL 
         public void crearGUI() {
         
        
@@ -79,7 +82,7 @@ public class Ventana extends JFrame implements MouseListener{
         add(jlImg1);
         
         
-        
+        ////////////////////////// BOTONES /////////////////
         jbIngresoDatos = new JButton("Ingresar Datos");
         jbIngresoDatos.setBounds(30, 240, 150, 30);
         jbIngresoDatos.setBackground(new Color(255, 116, 148));

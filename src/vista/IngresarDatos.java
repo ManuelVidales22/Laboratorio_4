@@ -3,6 +3,8 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -23,19 +25,26 @@ public class IngresarDatos extends JFrame {
     public JSpinner jsCantidad;
     public JButton jbGuardar, jbVolver, jbLimpiar1, jbLimpiar;
     
+    
+    //Constructor de JFrame
     public IngresarDatos(){
         
         setTitle("Datos");
         setSize(700, 500);
+        setResizable(false);
         getContentPane().setBackground(new Color(255, 174, 204));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         setLocationRelativeTo(null);
+        Image icn = new ImageIcon(
+                getClass().getResource("/imagenes/Dulceria.png")).getImage();
+        setIconImage(icn);
         crearGUI();
         //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setVisible(true);
     }
     
+    // GUI PRINCIPAL 
     public void crearGUI(){
         
         jlTitu =  new JLabel("Datos proveedor");

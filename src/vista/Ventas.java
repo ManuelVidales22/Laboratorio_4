@@ -23,7 +23,9 @@ public class Ventas extends JFrame {
     public JComboBox<String> jcNomProd ;
     public JSpinner jsCantidad;
     public JTextArea jtCampo;
-        
+    
+    
+    //Constructor de JFrame    
     public Ventas(){
         
         setTitle("Ventas");
@@ -40,6 +42,7 @@ public class Ventas extends JFrame {
         //setVisible(true);
     }
     
+    // GUI PRINCIPAL 
     public void crearGUI() {
         
        
